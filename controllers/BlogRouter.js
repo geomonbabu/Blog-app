@@ -16,5 +16,11 @@ router.get("/viewblog",async(req,res)=>{
         output
     })
 })
-
+router.post("/searchblog",async(req,res)=>{
+    let data = req.body //value read
+    let output = await blogmodel.find(data)
+    res.json(
+        output
+    )
+})
 module.exports=router
