@@ -10,6 +10,11 @@ router.post("/addblog",async(req,res)=>{
         status:"success"
     })
 })
-
+router.get("/viewblog",async(req,res)=>{
+    let output = await blogmodel.find()
+    res.json({
+        output
+    })
+})
 
 module.exports=router
